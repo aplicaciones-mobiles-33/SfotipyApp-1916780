@@ -1,0 +1,41 @@
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-row size="12">
+                <ion-col size="4">
+                    <ion-button class="regresar" (click)="volver()">
+                        <ion-icon name="chevron-back-outline" size='large'></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="8">
+                    <img src="{{url_imagen}}" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+    </ion-card>
+    <ion-grid>
+        <h1>
+            <strong>
+            {{nombre_artista}}
+          </strong>
+        </h1>
+        <ion-row *ngFor="let c of canciones">
+            <ion-col>
+                <a [routerLink]="['/spomtify/cancion', c['key']]">
+                    <ion-card>
+                        <ion-row>
+                            <ion-col>
+                                <img src="{{c['url_imagen']}}" alt="Imagen">
+                            </ion-col>
+                            <ion-col>
+                                <h2>
+                                    {{c['titulo']}}
+                                </h2>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </a>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

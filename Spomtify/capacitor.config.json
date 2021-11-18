@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Spomtify",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

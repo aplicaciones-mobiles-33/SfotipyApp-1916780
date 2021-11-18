@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-grid>
+        <ion-label>
+            <h1>
+                Tus Descargas
+            </h1>
+        </ion-label>
+        <ion-row *ngFor="let c of canciones_descargadas">
+            <ion-col>
+                <a [routerLink]="['/spomtify/cancion', c.key]">
+                    <ion-card>
+                        <ion-row>
+                            <ion-col>
+                                <img src="{{c['url_imagen']}}" alt="">
+                            </ion-col>
+                            <ion-col>
+                                <h2>
+                                    <p>
+                                        {{c['titulo']}} - {{c['autor']}}
+                                    </p>
+                                </h2>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </a>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

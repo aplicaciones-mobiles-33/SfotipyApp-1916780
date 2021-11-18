@@ -1,0 +1,23 @@
+<ion-grid>
+    <ion-label>
+        <h1>
+            Tus artistas favoritos
+        </h1>
+    </ion-label>
+    <ion-row size="12">
+        <ion-col *ngFor="let art of artistas" size="6">
+            <a [routerLink]="['/spomtify/artista', art['key']]">
+                <ion-card>
+                    <ion-row>
+                        <ion-col>
+                            <img src="{{art['url_imagen']}}" alt="">
+                        </ion-col>
+                        <ion-col>
+                            <h2>{{art['autor']}}</h2>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </a>
+        </ion-col>
+    </ion-row>
+</ion-grid>

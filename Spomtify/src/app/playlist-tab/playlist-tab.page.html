@@ -1,0 +1,30 @@
+<ion-content>
+    <ion-grid>
+        <ion-label>
+            <h1>
+                Tus Playlists
+            </h1>
+        </ion-label>
+        <ion-row *ngFor="let p of playlists">
+            <ion-col>
+                <a [routerLink]="['/spomtify/playlist', p['key']]">
+                    <ion-card>
+                        <ion-row>
+                            <ion-col>
+                                <img src="{{p['url_imagen']}}" alt="">
+                            </ion-col>
+                            <ion-col>
+                                <ion-row>
+                                    <h3>{{p.nombre}}</h3>
+                                </ion-row>
+                                <ion-row>
+                                    <h3>{{p.canciones.length}} Cancion/es</h3>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </a>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

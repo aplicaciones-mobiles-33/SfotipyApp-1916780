@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        {{saludo}}
+                    </ion-col>
+                    <ion-col class="settings">
+                        <ion-icon name="notifications-outline" size="large"></ion-icon>
+                        <ion-icon name="time-outline" size="large"></ion-icon>
+                        <ion-icon name="settings-outline" size="large"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <app-para-ti></app-para-ti>
+    <app-artistas-home></app-artistas-home>
+</ion-content>

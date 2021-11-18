@@ -1,0 +1,7 @@
+{
+  "name": "Spomtify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
