@@ -36,15 +36,6 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-label>
-                    <h1>
-                        <strong>
-                            {{cancionId}}
-                        </strong>
-                    </h1>
-                </ion-label>
-            </ion-row>
-            <ion-row>
                 <ion-col>
                     <ion-button (click)="hacerFav()">
                         <ion-icon name="heart-outline" size='large' *ngIf="!cancion.fav; else favorito"></ion-icon>

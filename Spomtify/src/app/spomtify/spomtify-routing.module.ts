@@ -22,10 +22,6 @@ const routes: Routes = [
         loadChildren: () => import('../biblioteca/biblioteca.module').then(m => m.BibliotecaPageModule)
       },
       {
-        path: 'subir-canciones',
-        loadChildren: () => import('../subir-canciones/subir-canciones.module').then(m => m.SubirCancionesPageModule)
-      },
-      {
         path: 'cancion/:id',
         loadChildren: () => import('../cancion/cancion.module').then(m => m.CancionModule)
       },

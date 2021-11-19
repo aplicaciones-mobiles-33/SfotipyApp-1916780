@@ -11,9 +11,9 @@ export class FirebaseDbService {
     private http: HttpClient
   ) {}
   resArray = [];
-  postCancion(infoCancion){
-    return this.http.post('https://spomtify-5162b-default-rtdb.firebaseio.com/canciones.json', infoCancion);
-  }
+  /*
+  git@github.com:aplicaciones-mobiles-33/SfotipyApp-1916780.git
+  */
   getRecomendadas(){
     return this.http.get('https://spomtify-5162b-default-rtdb.firebaseio.com/recomendadas.json')
   }
