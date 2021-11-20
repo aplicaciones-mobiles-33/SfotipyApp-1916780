@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   saludo: string;
+  cancionId = ''
+  canciones = []
   getHora(){
     let hoy = new Date();
     let hora = hoy.getHours();
@@ -19,9 +22,23 @@ export class HomePage implements OnInit {
       this.saludo = '¡Buenas Noches!';
     }
   }
-
-  constructor() {}
+  constructor(
+    private db: FirebaseDbService
+  ) {}
+  obtenerCanciones(){
+    this.db.getCanciones().subscribe(
+      respuesta => {
+        for(let key in respuesta){
+          if(key != this.cancionId){
+            respuesta[key]['key'] = key
+            this.canciones.push(respuesta[key])
+          }
+        }
+      }
+    )
+  }
   ngOnInit(){
     this.getHora();
+    this.obtenerCanciones();
   }
 }

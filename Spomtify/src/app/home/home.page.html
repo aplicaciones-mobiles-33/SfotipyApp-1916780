@@ -20,4 +20,34 @@
 <ion-content [fullscreen]="true">
     <app-para-ti></app-para-ti>
     <app-artistas-home></app-artistas-home>
+    <h2>
+        <p>
+            Canciones para descubrir
+        </p>
+    </h2>
+    <ion-row *ngFor="let cancion of canciones">
+        <ion-col>
+            <a [routerLink]="['/spomtify/cancion', cancion['key']]">
+                <ion-card class="cancionLista">
+                    <ion-row size="12">
+                        <ion-col size="3">
+                            <img src="{{cancion['url_imagen']}}" alt="">
+                        </ion-col>
+                        <ion-col>
+                            <ion-row>
+                                <h2>
+                                    {{cancion['titulo']}}
+                                </h2>
+                            </ion-row>
+                            <ion-row>
+                                <h2>
+                                    {{cancion['autor']}}
+                                </h2>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </a>
+        </ion-col>
+    </ion-row>
 </ion-content>

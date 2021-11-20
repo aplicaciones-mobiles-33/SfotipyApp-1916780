@@ -13,7 +13,6 @@ export class ArtistasHomeComponent implements OnInit {
   obtenerArtistas(){
     this.db.getCanciones().subscribe(
       respuesta =>{
-        console.log(respuesta)
         for(let key in respuesta){
           respuesta[key]['key'] = key
           if(!(respuesta[key]['autor'] in this.artistaKey)){
