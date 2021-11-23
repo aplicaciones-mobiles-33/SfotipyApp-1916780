@@ -15,27 +15,11 @@ const routes: Routes = [
       },
       {
         path: 'buscar',
-        loadChildren: () => import('../buscar/buscar.module').then(m => m.BuscarPageModule)
+        loadChildren: () => import('../buscar/buscar.module').then( m => m.BuscarPageModule)
       },
       {
         path: 'biblioteca',
-        loadChildren: () => import('../biblioteca/biblioteca.module').then(m => m.BibliotecaPageModule)
-      },
-      {
-        path: 'cancion/:id',
-        loadChildren: () => import('../cancion/cancion.module').then(m => m.CancionModule)
-      },
-      {
-        path: 'playlist/favoritas',
-        loadChildren: () => import('../favoritas/favoritas.module').then(m => m.FavoritasModule)
-      },
-      {
-        path: 'playlist/:id', 
-        loadChildren: () => import('../playlist/playlist.module').then(m => m.PlaylistModule)
-      },
-      {
-        path: 'artista/:id',
-        loadChildren: () => import('../artist/artist.module').then(m => m.ArtistModule)
+        loadChildren: () => import('../biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
       },
       {
         path: '',

@@ -5,7 +5,19 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./spomtify/spomtify.module').then( m => m.SpomtifyPageModule)
-  }
+  },
+  {
+    path: 'detalle-cancion',
+    loadChildren: () => import('./detalle-cancion/detalle-cancion.module').then( m => m.DetalleCancionPageModule)
+  },
+  {
+    path: 'detalle-cancion/:id',
+    loadChildren: () => import('./detalle-cancion/detalle-cancion.module').then( m => m.DetalleCancionPageModule)
+  },
+  {
+    path: 'detalle-cancion/:id/:id',
+    loadChildren: () => import('./detalle-cancion/detalle-cancion.module').then( m => m.DetalleCancionPageModule)
+  },
 ];
 @NgModule({
   imports: [

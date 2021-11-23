@@ -1,0 +1,29 @@
+<ion-grid>
+    <ion-row *ngFor="let cancion of canciones">
+        <a [routerLink]="['/detalle-cancion', cancion['artistaID'], cancion['cancionID']]">
+            <ion-col>
+                <ion-row>
+                    <ion-col>
+                        <img src="{{cancion['Imagen']}}" alt="">
+                    </ion-col>
+                    <ion-col>
+                        <ion-row>
+                            <ion-label>
+                                <h1>
+                                    {{cancion['Artista']}}
+                                </h1>
+                            </ion-label>
+                        </ion-row>
+                        <ion-row>
+                            <ion-label>
+                                <h1>
+                                    {{cancion['Titulo']}}
+                                </h1>
+                            </ion-label>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </a>
+    </ion-row>
+</ion-grid>

@@ -8,25 +8,19 @@ import { FirebaseDbService } from '../firebase-db.service';
 })
 export class ArtistasHomeComponent implements OnInit {
   artistas = []
-  artistaKey: Object = {}
   constructor(private db: FirebaseDbService) { }
   obtenerArtistas(){
-    this.db.getCanciones().subscribe(
+    this.db.getArtistas().subscribe(
       respuesta =>{
-        for(let key in respuesta){
-          respuesta[key]['key'] = key
-          if(!(respuesta[key]['autor'] in this.artistaKey)){
-            this.artistaKey[respuesta[key]['autor']] = key
-          }
-        }
-        for(let artista in this.artistaKey){
-          this.artistas.push(respuesta[this.artistaKey[artista]])
-          //this.artistas.push(respuesta[this.artistaKey])
+        for(let id in respuesta){
+          respuesta[id]['id'] = id
+          this.artistas.push(respuesta[id])
         }
       }
     )
   }
   ngOnInit() {
-    this.obtenerArtistas();
+    this.obtenerArtistas()
   }
+
 }

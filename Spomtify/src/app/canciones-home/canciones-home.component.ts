@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
-  selector: 'app-buscar',
-  templateUrl: './buscar.page.html',
-  styleUrls: ['./buscar.page.scss'],
+  selector: 'app-canciones-home',
+  templateUrl: './canciones-home.component.html',
+  styleUrls: ['./canciones-home.component.scss'],
 })
-export class BuscarPage implements OnInit {
-  busqueda: string;
+export class CancionesHomeComponent implements OnInit {
   canciones = []
-  cancionesFiltradas = []
   constructor(private db: FirebaseDbService) { }
   obtenerCanciones(){
     this.db.getArtistas().subscribe(
@@ -25,18 +23,8 @@ export class BuscarPage implements OnInit {
       }
     )
   }
-  filtrarCanciones(){
-    this.cancionesFiltradas = []
-    for(let cancion of this.canciones){
-      if(cancion['Titulo'].toLowerCase().includes(this.busqueda.toLowerCase())
-          || cancion['Artista'].toLowerCase().includes(this.busqueda.toLowerCase())){
-        this.cancionesFiltradas.push(cancion)
-      }
-    }
-  }
   ngOnInit() {
-    this.busqueda = ''
-    this.obtenerCanciones()
+    this.obtenerCanciones();
   }
 
 }

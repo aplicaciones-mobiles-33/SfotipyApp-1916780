@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import { ParaTiModule } from '../para-ti/para-ti.module';
 import { ArtistasHomeModule } from '../artistas-home/artistas-home.module';
+import { CancionesHomeModule } from '../canciones-home/canciones-home.module';
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { ArtistasHomeModule } from '../artistas-home/artistas-home.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ParaTiModule,
-    ArtistasHomeModule
+    ArtistasHomeModule,
+    CancionesHomeModule
   ],
   declarations: [HomePage]
 })

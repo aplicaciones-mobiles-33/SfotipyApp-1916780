@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParaTiComponent } from './para-ti.component';
 import { IonicModule } from '@ionic/angular';
+import { CancionesHomeComponent } from './canciones-home.component';
 import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
-  declarations: [ParaTiComponent],
+  declarations: [CancionesHomeComponent],
   imports: [
-    CommonModule, 
+    CommonModule,
     IonicModule,
     RouterModule
   ],
-  exports: [ParaTiComponent]
+  exports: [CancionesHomeComponent]
 })
-export class ParaTiModule { }
+export class CancionesHomeModule { }
