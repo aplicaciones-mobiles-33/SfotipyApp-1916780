@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CancionModel } from '../cancion-model';
 import { FirebaseDbService } from '../firebase-db.service';
 import { Playlist } from '../playlist';
 
